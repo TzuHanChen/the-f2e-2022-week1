@@ -1,0 +1,102 @@
+$header-height: 55px;
+$header-content-height-mobile: 39px;
+$header-content-height-desktop: 46px;
+
+.header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	height: $header-height;
+	padding: 16px 24px 0 24px;
+	background-color: $primary-beige;
+	display: flex;
+	justify-content: space-between;
+	@media (min-width: $breakpoint) {
+		height: 78px;
+		padding: 30px 64px 0 64px;
+	}
+}
+
+.logo {
+	@include button-icon-default(80px, $header-content-height-mobile, "logo", "black");
+	@include button-icon-desktop(112px, $header-content-height-desktop);
+}
+
+.header-right {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.signin-mobile {
+	@include button-purple-mobile();
+	display: block;
+	@media (min-width: $breakpoint) {
+		display: none;
+	}
+}
+.open-nav {
+	@include button-icon-default(32px, $header-content-height-mobile, "menu", "black");
+	margin-left: 16px;
+	display: block;
+	@media (min-width: $breakpoint) {
+		display: none;
+	}
+}
+.close-nav {
+	@include button-icon-default(32px, $header-content-height-mobile, "close", "black");
+	display: none;
+}
+
+.nav {
+	position: fixed;
+	z-index: 1;
+	top: $header-height;
+	left: 0;
+	display: none;
+	width: 100%;
+	border-radius: 0 0 40px 40px;
+	padding: 39px 24px 72px 24px;
+	background-color: $primary-beige;
+	@media (min-width: $breakpoint) {
+		position: initial;
+		display: flex;
+		border-radius: 0;
+		padding: 0;
+	}
+}
+.nav-left {
+	display: block;
+	margin-bottom: 36px;
+	@media (min-width: $breakpoint) {
+		margin: 0 28px 0 0;
+		width: 374px;
+		padding: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.nav-text {
+	@include button-text();
+	margin: 0 auto;
+}
+.nav-right {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	a {
+		width: calc((100% - 16px) / 2);
+	}
+	@media (min-width: $breakpoint) {
+		width: auto;
+		a {
+			width: auto;
+		}
+	}
+}
+.signin-desktop {
+	@include button-purple-desktop();
+	margin-right: 16px;
+}
+.login-desktop {
+	@include button-beige-desktop();
+}

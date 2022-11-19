@@ -1,0 +1,149 @@
+$button-text-icon-padding-mobile: 9px 15px;
+$button-text-icon-padding-desktop: 11px 23px;
+
+@mixin button-text(){
+	@include menu();
+	display: block;
+	padding: 12px;
+	text-align: center;
+	color: $black;
+}
+
+@mixin button-icon-default($width-mobile, $height-mobile, $name, $color) {
+	width: $width-mobile;
+	height: $height-mobile;
+	background-image: url("../icons/" + $name + "-" + $color + ".svg");
+	background-size: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+@mixin button-icon-desktop($width-desktop, $height-desktop) {
+	@media (min-width: $breakpoint) {
+		width: $width-desktop;
+		height: $height-desktop;
+	}
+}
+
+@mixin button-image {
+	
+}
+
+@mixin button-text-icon-default($button-padding) {
+	padding: $button-padding;
+	border-radius: 4px;
+	@include body-2();
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		width: 16px;
+		height: 16px;
+		margin-left: 8px;
+	}
+}
+@mixin button-text-icon-enabled($border-color, $background-color, $text-color) {
+	border: 1px solid $border-color;
+	background-color: $background-color;
+	color: $text-color;
+}
+@mixin button-text-icon-hovered($background-color, $shadow-color, $shadow-alpha) {
+	background-color: $background-color;
+	animation-name: add-shadow;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	@keyframes add-shadow {
+		from {
+			box-shadow: none;
+		}
+		to {
+			box-shadow: 0px 2px 12px -4px rgba($shadow-color, $shadow-alpha);
+		}
+	}
+}
+@mixin button-text-icon-focused-pressed() {
+	box-shadow: none;
+}
+@mixin button-text-icon-disabled() {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+@mixin button-purple-mobile() {
+	@include button-text-icon-default($button-text-icon-padding-mobile);
+	@include button-text-icon-enabled($white, $primary-purple, $white);
+	&:hover {
+		@include button-text-icon-hovered($primary-purple-variant, $shadow-purple, 0.7);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled {
+		@include button-text-icon-disabled();
+	}
+}
+@mixin button-pink-mobile() {
+	@include button-text-icon-default($button-text-icon-padding-mobile);
+	@include button-text-icon-enabled($white, $primary-pink, $white);
+	&:hover {
+		@include button-text-icon-hovered($primary-pink-variant, $primary-pink, 1.0);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled{
+		@include button-text-icon-disabled();
+	}
+}
+
+@mixin button-purple-desktop() {
+	@include button-text-icon-default($button-text-icon-padding-desktop);
+	@include button-text-icon-enabled($white, $primary-purple, $white);
+	&:hover {
+		@include button-text-icon-hovered($primary-purple-variant, $shadow-purple, 0.7);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled {
+		@include button-text-icon-disabled();
+	}
+}
+@mixin button-pink-desktop() {
+	@include button-text-icon-default($button-text-icon-padding-desktop);
+	@include button-text-icon-enabled($white, $primary-pink, $white);
+	&:hover {
+		@include button-text-icon-hovered($primary-pink-variant, $primary-pink, 1.0);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled{
+		@include button-text-icon-disabled();
+	}
+}
+@mixin button-beige-desktop() {
+	@include button-text-icon-default($button-text-icon-padding-desktop);
+	@include button-text-icon-enabled($primary-purple, $primary-beige, $primary-purple);
+	&:hover {
+		@include button-text-icon-hovered($primary-beige, $shadow-purple, 1.0);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled{
+		@include button-text-icon-disabled();
+	}
+}
+@mixin button-black-desktop() {
+	@include button-text-icon-default($button-text-icon-padding-desktop);
+	@include button-text-icon-enabled($white, $black, $white);
+	&:hover {
+		@include button-text-icon-hovered($black-variant, $shadow-purple, 0.7);
+	}
+	&:focus, &:active {
+		@include button-text-icon-focused-pressed();
+	}
+	&:disabled{
+		@include button-text-icon-disabled();
+	}
+}

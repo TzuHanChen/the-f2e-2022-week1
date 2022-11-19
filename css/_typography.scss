@@ -1,0 +1,123 @@
+/* typography */
+
+// order of properties : font-family, font-weight, font-style, font-size, line-height, letter-spacing
+// order of screens : mobile, desktop
+
+$chinese: 'Noto Sans TC', sans-serif;
+$english: 'Raleway', sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+
+@mixin text-appearence($font-family, $font-weight, $font-style: normal) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+	font-style: $font-style;
+}
+@mixin text-measurement($font-size-mobile, $line-height, $letter-spacing) {
+	font-size: $font-size-mobile;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+}
+@mixin text-desktop-size($font-size-desktop) {
+	@media (min-width: $breakpoint) {
+		font-size: $font-size-desktop;
+	}
+}
+
+@mixin h1 {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(38px, 140%, 0.1em);
+	@include text-desktop-size(56px);
+}
+@mixin h2 {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(32px, 160%, 0.1em);
+	@include text-desktop-size(40px);
+}
+@mixin h2-en {
+	@include text-appearence($english, $font-weight-light);
+	@include text-measurement(32px, 160%, 0.1em);
+	@include text-desktop-size(40px);
+}
+@mixin h3 {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(28px, 160%, 0.1em);
+	@include text-desktop-size(32px);
+}
+
+@mixin h4 {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(18px, 180%, 0.2em);
+	@include text-desktop-size(22px);
+}
+@mixin h4-en {
+	@include text-appearence($english, $font-weight-light);
+	@include text-measurement(18px, 160%, 0.2em);
+	@include text-desktop-size(22px);
+}
+@mixin h4-en-it {
+	@include text-appearence($english, $font-weight-light, italic);
+	@include text-measurement(18px, 160%, 0);
+	@include text-desktop-size(22px);
+}
+
+@mixin body {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(16px, 160%, 0.05em);
+}
+@mixin body-en {
+	@include text-appearence($english, $font-weight-light);
+	@include text-measurement(16px, 160%, 0.1em);
+}
+@mixin body-2 {
+	@include text-appearence($chinese, $font-weight-regular);
+	@include text-measurement(12px, 160%, 0.05em);
+	@include text-desktop-size(14px);
+}
+@mixin body-2-en {
+	@include text-appearence($english, $font-weight-light);
+	@include text-measurement(14px, 160%, 0.03em);
+}
+
+@mixin caption {
+	@include text-appearence($chinese, $font-weight-light);
+	@include text-measurement(12px, 160%, 0.03em);
+}
+@mixin caption-en {
+	@include text-appearence($english, $font-weight-light);
+	@include text-measurement(12px, 160%, 0.03em);
+}
+@mixin display-1 {
+	@include text-appearence($english, $font-weight-regular);
+	@include text-measurement(60px, 120%, 0.03em);
+	@include text-desktop-size(100px);
+}
+@mixin display-2 {
+	@include text-appearence($english, $font-weight-regular);
+	@include text-measurement(28px, 160%, 0);
+	@include text-desktop-size(48px);
+}
+@mixin menu {
+	@include text-appearence($chinese, $font-weight-regular);
+	@include text-measurement(14px, 160%, 0.05em);
+}
+
+.h1 { @include h1(); }
+.h2 { @include h2(); }
+.h2-en { @include h2-en(); }
+.h3 { @include h3(); }
+
+.h4 { @include h4(); }
+.h4-en { @include h4-en(); }
+.h4-en-it { @include h4-en-it(); }
+
+.body { @include body(); }
+.body-en { @include body-en(); }
+.body-2 { @include body-2(); }
+.body-2-en { @include body-2-en(); }
+
+.caption { @include caption(); }
+.caption-en { @include caption-en(); }
+.display-1 { @include display-1(); }
+.display-2 { @include display-2(); }
+.menu { @include menu(); }
