@@ -25,6 +25,7 @@ openNav.addEventListener("click", openMobileNav);
 let closeNav = document.getElementById("close-nav");
 closeNav.addEventListener("click", closeMobileNav);
 let nav = document.getElementById("nav");
+let navBackdrop = document.getElementById("nav-backdrop");
 
 function openMobileNav() {
 	header.style.backgroundColor = "#EFDFD2";
@@ -34,6 +35,7 @@ function openMobileNav() {
 	nav.style.backgroundColor = "#EFDFD2";
 	nav.style.display = "flex";
 	nav.style.flexDirection = "column";
+	navBackdrop.style.display = "block";
 }
 
 function closeMobileNav() {
@@ -44,4 +46,5 @@ function closeMobileNav() {
 	nav.style.backgroundColor = "initial";
 	nav.style.display = "none";
 	nav.style.flexDirection = "row";
+	navBackdrop.style.display = "none";
 }

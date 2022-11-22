@@ -1,10 +1,13 @@
 /* default */
-
 $breakpoint: 960px;
+$page-max-width: 1440px;
+$card-padding-mobile: 24px;
+$card-padding-desktop: 40px;
 
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
+	border: none;
 	padding: 0;
 }
 button {

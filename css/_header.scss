@@ -4,7 +4,7 @@ $header-content-height-desktop: 46px;
 
 .header {
 	position: fixed;
-	z-index: 2;
+	z-index: 9;
 	width: 100%;
 	height: $header-height;
 	padding: 16px 24px 0 24px;
@@ -48,7 +48,7 @@ $header-content-height-desktop: 46px;
 
 .nav {
 	position: fixed;
-	z-index: 1;
+	z-index: 9;
 	top: $header-height;
 	left: 0;
 	display: none;
@@ -61,6 +61,17 @@ $header-content-height-desktop: 46px;
 		border-radius: 0;
 		padding: 0;
 	}
+}
+.nav-backdrop {
+	position: absolute;
+	z-index: 8;
+	top: 50vh;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 50vh;
+	background-color: $black;
+	opacity: 0.7;
 }
 .nav-left {
 	width: 100%;
