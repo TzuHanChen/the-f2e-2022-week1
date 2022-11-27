@@ -2,7 +2,8 @@
 $breakpoint: 960px;
 $page-max-width: 1440px;
 $card-padding-mobile: 24px;
-$card-padding-desktop: 40px;
+$border-radius-mobile: 40px;
+$border-radius-desktop: 56px;
 
 *, *::before, *::after {
 	box-sizing: border-box;

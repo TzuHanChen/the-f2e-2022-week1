@@ -53,7 +53,7 @@ $header-content-height-desktop: 46px;
 	left: 0;
 	display: none;
 	width: 100%;
-	border-radius: 0 0 40px 40px;
+	border-radius: 0 0 $border-radius-mobile $border-radius-mobile;
 	padding: 39px 24px 72px 24px;
 	@media (min-width: $breakpoint) {
 		position: initial;

@@ -17,7 +17,7 @@ setInterval(() => {
     }
 }, interval);
 
-// header
+// header open and close nav
 let header = document.getElementById("header");
 let signinMobile = document.getElementById("signin-mobile");
 let openNav = document.getElementById("open-nav");

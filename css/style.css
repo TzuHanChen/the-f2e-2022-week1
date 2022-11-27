@@ -524,7 +524,7 @@ img {
 }
 
 .card0 {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100%;
   height: 100%;
@@ -556,16 +556,21 @@ img {
   position: relative;
 }
 
-.card1::before {
+.card1-bgimage {
   content: "";
   background-image: url("../images/bg-dec.png");
   background-size: cover;
   position: absolute;
+  z-index: 1;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   opacity: 0.3;
+}
+
+.card1-text, .card1-star, .card1-diamond, .card1-scroll-down {
+  z-index: 2;
 }
 
 .card1-text {
@@ -651,10 +656,6 @@ img {
   .card1-subtitle {
     font-size: 40px;
   }
-}
-
-.card1-star, .card1-diamond, .card1-scroll-down {
-  z-index: 2;
 }
 
 .card1-star {
@@ -774,10 +775,10 @@ img {
     left: 54vw;
   }
   .card1-diamond img:nth-child(4) {
-    width: 290px;
-    height: 290px;
-    bottom: 49vh;
-    left: 71vw;
+    width: 270px;
+    height: 240px;
+    right: 9vw;
+    bottom: 52vh;
   }
   .card1-diamond img:nth-child(5) {
     width: 130px;
@@ -827,21 +828,115 @@ img {
 }
 
 .card2 {
-  height: 100vh;
+  height: auto;
   background-color: #001120;
   position: relative;
 }
 
-.card2::before {
+.card2-bgimage {
   content: "";
   background-image: url("../images/bg-for-1&2.png");
   background-size: cover;
   position: absolute;
+  z-index: 0;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   opacity: 0.7;
+}
+
+.card2-question, .card2-troubles-container {
+  position: relative;
+  z-index: 2;
+}
+
+.card2-question {
+  height: 100vh;
+  background-image: url(../images/question-mark.svg);
+  background-size: 264px 264px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .card2-question {
+    background-size: 405px 405px;
+  }
+}
+
+.card2-question h3 {
+  color: #FFFFFF;
+}
+
+.card2-troubles {
+  padding: 55px 24px 68px 24px;
+}
+@media (min-width: 960px) {
+  .card2-troubles {
+    padding: 95px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card2-envy, .card2-wish, .card2-skilltree {
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 960px) {
+  .card2-envy, .card2-wish, .card2-skilltree {
+    width: 600px;
+  }
+}
+
+.card2-envy, .card2-wish {
+  margin-bottom: 64px;
+}
+
+.card2-animation {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2-envy .card2-animation img {
+  width: 151px;
+}
+
+.card2-wish .card2-animation img {
+  width: 217px;
+}
+
+.card2-skilltree .card2-animation img {
+  width: 205px;
+}
+
+.card2-text h3, .card2-text h4 {
+  color: #FFFFFF;
+}
+.card2-text h3 {
+  margin-bottom: 8px;
+}
+
+.card2-envy .card2-text h3:nth-child(1), .card2-skilltree .card2-text h3:nth-child(1) {
+  display: block;
+}
+.card2-envy .card2-text h3:nth-child(2), .card2-skilltree .card2-text h3:nth-child(2) {
+  display: none;
+}
+@media (min-width: 960px) {
+  .card2-envy .card2-text h3:nth-child(1), .card2-skilltree .card2-text h3:nth-child(1) {
+    display: none;
+  }
+  .card2-envy .card2-text h3:nth-child(2), .card2-skilltree .card2-text h3:nth-child(2) {
+    display: block;
+  }
 }
 
 .card2 {

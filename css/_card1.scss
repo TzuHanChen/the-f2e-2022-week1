@@ -1,18 +1,23 @@
 .card1 {
 	height: 100vh;
 	background-color: $primary-beige;
-	position: relative;	
+	position: relative;
 }
-.card1::before {
+.card1-bgimage {
 	content: "";
 	background-image: url("../images/bg-dec.png");
 	background-size: cover;
 	position: absolute;
+	z-index: 1;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	opacity: 0.3;
+}
+
+.card1-text, .card1-star, .card1-diamond, .card1-scroll-down {
+	z-index: 2;
 }
 
 .card1-text {
@@ -67,10 +72,6 @@
 	@media (min-width: $breakpoint) {
 		@include h2();
 	}
-}
-
-.card1-star, .card1-diamond, .card1-scroll-down {
-	z-index: 2;
 }
 
 .card1-star {
@@ -189,10 +190,10 @@
 			left: 54vw;
 		}
 		&:nth-child(4) {
-			width: 290px;
-			height: 290px;
-			bottom: 49vh;
-			left: 71vw;
+			width: 270px;
+			height: 240px;
+			right: 9vw;
+			bottom: 52vh;
 		}
 		&:nth-child(5) {
 			width: 130px;
@@ -230,7 +231,7 @@
 		height: 40px;
 	}
 	@media (min-width: $breakpoint) {
-		bottom: $card-padding-desktop;
+		bottom: 40px;
 		p {
 			margin-bottom: 24px;
 		}
